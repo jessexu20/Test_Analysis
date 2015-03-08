@@ -9,6 +9,7 @@ We saved it into a test.txt file for the script to check the coverage in Analysi
 	node_modules/.bin/istanbul cover test.js
 		
 The following are the results of Istanbul. 
+
 	=============================== Coverage summary ===============================
 	Statements   : 100% ( 14/14 )
 	Branches     : 100% ( 4/4 )
