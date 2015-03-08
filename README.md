@@ -48,7 +48,7 @@ The following are the errors found by JsHint. We have saved the result into a an
 #### Configure the options of JsHint
 We can see that there are 4 erros which are found by JsHint. We can modify the [options](http://jshint.com/docs/options/) of the JsHint to omit certain errors found by JsHint.
 For example, we want to omit the first error which is using '==' to compare with 'null'.
-We can create a .jshint file and put the JsHint options into it. The list of the JsHint options can be found here. To omit the above the error,we can put the following into the file.
+We can create a .jshintrc file and put the JsHint options into it. The list of the JsHint options can be found here. To omit the above the error,we can put the following into the file.
 
 	{
 	  "eqnull": true,
