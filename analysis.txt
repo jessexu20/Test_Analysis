@@ -1,0 +1,6 @@
+subject.js: line 3, col 9, Use '===' to compare with 'null'.
+subject.js: line 3, col 21, Missing semicolon.
+subject.js: line 6, col 14, Missing semicolon.
+subject.js: line 8, col 19, Missing semicolon.
+
+4 errors
