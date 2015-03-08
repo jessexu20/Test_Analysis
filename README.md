@@ -28,7 +28,7 @@ However, if we change the code in subject.js without running this command. We ca
 ## Analysis
 
 ### Run the static analysis tool JsHint on the source code 
-We have used the static code analysis tool JsHint to run the analyse the subject.js. The info about JsHint can be found here.
+We have used the static code analysis tool JsHint to run the analyse the subject.js. The info about JsHint can be found [here](http://jshint.com/docs/).
 You can install it by the following command.
 
 	npm install jshint -g
@@ -45,7 +45,7 @@ The following are the errors found by JsHint. We have saved the result into a an
 	4 errors
 
 #### Configure the options of JsHint
-We can see that there are 4 erros which are found by JsHint. We can modify the options of the JsHint to omit certain errors found by JsHint.
+We can see that there are 4 erros which are found by JsHint. We can modify the [options](http://jshint.com/docs/options/) of the JsHint to omit certain errors found by JsHint.
 For example, we want to omit the first error which is using '==' to compare with 'null'.
 We can create a .jshint file and put the JsHint options into it. The list of the JsHint options can be found here. To omit the above the error,we can put the following into the file.
 
@@ -59,7 +59,13 @@ When we configured the JsHint, we rerun the JsHint, we can get the following the
 	subject.js: line 8, col 18, Missing semicolon.
 	3 errors
 ### Reject a commit if it fails a minimum testing criteria
-We need to configure the Github Hook to reject a commit. We can do it by edit the file in .git/hooks. In this directory, there is a pre-commit.sample file. What we need to do is to rename it into pre-commit and put our logic into it. We have made the pre-commit file to call our own script test.sh file to run when a commit is commited in this git repository. 
+We need to configure the Github Hook to reject a commit. We can do it by editing the file in .git/hooks. In this directory, there is a pre-commit.sample file. What we need to do is to rename it into pre-commit and put our logic into it. We have made the pre-commit file to call our own script test.sh file to run when a commit is commited in this git repository. 
+In our case, we only put the following into the pre-commit, as we only need it to call test.sh.
+	#!/bin/sh
+	# Refuse to commit files with if failed coverage test by 50% or failed certain analysis rules#
+	echo "call test.sh"
+	sh ./test.sh
+
 #### Less than 50% coverage of any kind in Coverage Report
 We have used the Shell Script to get the result from test.txt, as mentioned in Test Section. If there is some coverage which is lower than 50%. We deny that commit and output the error infomation.
 The following are the sample result:
