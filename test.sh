@@ -10,17 +10,18 @@ sed -n '3,6p' "$filename">$filename1
 echo "Istanbul Finished"
 echo
 echo "--------Running Static Analysis tool Jshint!!"
-jshint subject.js>analysis.txt
+jshint subject.js | tee analysis.txt
 tmp="$(grep -o "Missing semicolon" analysis.txt)"
 echo
-echo "--------Checking whether analysis result Satisfy Requirements~~~~~~"
+echo "--------Checking whether Analysis Result Satisfy Requirements~~~~~~"
 echo
 if [[ $tmp == *"semicolon"* ]]
 then
 	echo "!!!Failed to commit!!! There is missing semicolon problems in your program"
 	exit 1
 fi
-echo
+
+echo "Passed the Analysis Result Satisfy Requirements "
 echo "--------Checking whether coverage Satisfy Requirements~~~~~~"
 echo 
 while read line

@@ -1,11 +1,11 @@
 var fs = require("fs");
 function inc(p, q){
-   if(q ==null) q =1
+   if(q ==null) q =1;
    if( p < 0 )
    {
-   	p = -p
+	   p = -p;
    }
-    return p + q/q
+   return p + q/q;
 }
 
 exports.inc = inc;
