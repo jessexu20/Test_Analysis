@@ -1,0 +1,5 @@
+#!/bin/sh
+# Refuse to commit files with if failed coverage test by 50%#
+echo "call test.sh"
+sh ./test.sh
+
